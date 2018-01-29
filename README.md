@@ -6,7 +6,7 @@ Extend Cockpit core functionality by sending a customized email when a collectio
 
 1. Confirm that you have cockpit configured to send emails
 2. Download zip and extract to 'your-cockpit-docroot/addons' (e.g. cockpitcms/addons/EmailOnSave)
-3. Access module settings (http://<your-cockpit-site>/emailonsave) and confirm that configuration page is loaded
+3. Access module settings (http://your-cockpit-site/emailonsave) and confirm that configuration page is loaded
 
 ## Configuration
 
@@ -18,11 +18,11 @@ On the configuration page there are 2 main sections, the first, on the left, wil
 
 On the right, there is a list with all available collections, enabling a specific collection will trigger the email every time the collection is saved.
 
-![Configuration](https://monosnap.com/file/Yc3iO0h1E6pfhqfdVODvn2fPuxtIym.png)
+![Configuration](https://monosnap.com/file/D2KAtXjK4jlPW9B2Fkml7GJIyBbkvF.png)
 
 Using the default template, an email will render as below:
 
-![Email](https://monosnap.com/file/r2xSeWnAta5GnTyT70mRUyfjMHzGeA.png)
+![Email](https://monosnap.com/file/QmW2FY0AcJN65TWQOmqQYhWt9AY5Hd.png)
 
 ## Copyright and license
 

@@ -12,7 +12,7 @@ $app->on('collections.save.after', function($name, $data) use($app) {
     $subject = !empty($email['subject']) ? $email['subject'] : 'New collection saved';
     $body = isset($email['body']) ? $email['body'] : '';
 
-    $dataHtml = '<br><hr><br>';
+    $dataHtml = "<br><hr><br>\n";
     foreach ($data as $key => $value) {
       $dataHtml .= '<div class="field">';
       $dataHtml .= "<div><b>${key}:</b></div>\n";
@@ -25,9 +25,8 @@ $app->on('collections.save.after', function($name, $data) use($app) {
       else {
         $dataHtml .= "<pre>" . json_encode($value) . "</pre>\n";
       }
-      $dataHtml .= '</div>';
+      $dataHtml .= "</div>\n";
     }
-    $dataHtml .= '<br><br>';
 
     $body = str_replace('[:data]', $dataHtml, $body);
 
@@ -38,13 +37,11 @@ $app->on('collections.save.after', function($name, $data) use($app) {
     ];
 
     $message = $app->view('emailonsave:emails/onsave.php', $vars);
-    $options['cc'] = 'pauloamgomes2@gmail.com';
 
     $app->mailer->mail(
       $email['to'],
       $subject,
-      $message,
-      $options
+      $message
     );
 
   }
