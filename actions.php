@@ -1,7 +1,7 @@
 <?php
 
 
-$app->on('collections.save.after', function($name, $data) use($app) {
+$app->on('collections.save.after', function ($name, $data) use ($app) {
 
   $settings = $app->storage->getKey('cockpit/options', 'emailonsave.settings', []);
 

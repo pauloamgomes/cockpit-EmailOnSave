@@ -2,6 +2,9 @@
 
 namespace EmailOnSave\Controller;
 
+/**
+ * Admin class.
+ */
 class Admin extends \Cockpit\AuthController {
 
   public function index() {

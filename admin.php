@@ -1,19 +1,18 @@
 <?php
 
-// ACL
+// ACL.
 $this("acl")->addResource('EmailOnSave', ['manage.emailonsave']);
 
-$app->on('admin.init', function() {
+/*
+ * add menu entry if the user has access to group stuff
+ */
+$this->on('cockpit.view.settings.item', function () {
+  if ($this->module('cockpit')->hasaccess('EmailOnSave', 'manage.emailonsave')) {
+    $this->renderView("emailonsave:views/partials/settings.php");
+  }
+});
 
-    // bind admin routes /emailonsave
-    $this->bindClass('EmailOnSave\\Controller\\Admin', 'emailonsave');
-
-    // add to modules menu
-    $this('admin')->addMenuItem('modules', [
-        'label' => 'Email On Save',
-        'icon'  => 'assets:app/media/icons/email.svg',
-        'route' => '/emailonsave',
-        'active' => strpos($this['route'], '/emailonsave') === 0
-    ]);
-
+$app->on('admin.init', function () use ($app) {
+  // Bind admin routes /settings/email-on-save.
+  $this->bindClass('EmailOnSave\\Controller\\Admin', 'settings/email-on-save');
 });
